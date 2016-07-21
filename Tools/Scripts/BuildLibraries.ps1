@@ -4,12 +4,12 @@ $scriptPath = Split-Path -parent $MyInvocation.MyCommand.Path
 SetFolder $scriptPath
 #==================================================================================================
 $Q8Builds = @(
-	@{
-		Name					= "Q8";
-		QuantumDepth		= "8";
-		Framework			= "v2.0"
-		PlatformToolset	= "v90"
-	}
+#	@{
+#		Name					= "Q8";
+#		QuantumDepth		= "8";
+#		Framework			= "v2.0"
+#		PlatformToolset	= "v90"
+#	}
 	@{
 		Name					= "Q8";
 		QuantumDepth		= "8";
@@ -18,12 +18,12 @@ $Q8Builds = @(
 	}
 )
 $Q16Builds = @(
-	@{
-		Name					= "Q16";
-		QuantumDepth		= "16";
-		Framework			= "v2.0"
-		PlatformToolset	= "v90"
-	}
+#	@{
+#		Name					= "Q16";
+#		QuantumDepth		= "16";
+#		Framework			= "v2.0"
+#		PlatformToolset	= "v90"
+#	}
 	@{
 		Name					= "Q16";
 		QuantumDepth		= "16";
