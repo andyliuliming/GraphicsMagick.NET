@@ -7,28 +7,16 @@ $Q8Builds = @(
 	@{
 		Name					= "Q8";
 		QuantumDepth		= "8";
-		Framework			= "v2.0"
-		PlatformToolset	= "v90"
-	}
-	@{
-		Name					= "Q8";
-		QuantumDepth		= "8";
-		Framework			= "v4.0";
-		PlatformToolset	= "v110"
+		Framework			= "v4.5.2";
+		PlatformToolset	= "v140"
 	}
 )
 $Q16Builds = @(
 	@{
 		Name					= "Q16";
 		QuantumDepth		= "16";
-		Framework			= "v2.0"
-		PlatformToolset	= "v90"
-	}
-	@{
-		Name					= "Q16";
-		QuantumDepth		= "16";
-		Framework			= "v4.0";
-		PlatformToolset	= "v110"
+		Framework			= "v4.5.2";
+		PlatformToolset	= "v140"
 	}
 )
 $configurations = @(
@@ -87,7 +75,7 @@ function Build($platform, $builds)
 		}
 		else
 		{
-			$options = "$($options)Win32";
+			$options = "$($options)x86";
 		}
 
 		if ($build.Framework -eq "v2.0")

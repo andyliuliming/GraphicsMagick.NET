@@ -19,18 +19,12 @@ if ($args.count -ne 1)
 $version = $args[0]
 
 $builds = @(
-  @{Name = "GraphicsMagick.NET.net20"; Quantum = "Q8"; Platform = "Win32"; PlatformName = "x86"; Framework = "v2.0"; FrameworkName = "net20"; RunTests = $true}
-  @{Name = "GraphicsMagick.NET.net20"; Quantum = "Q8"; Platform = "x64"; PlatformName = "x64"; Framework = "v2.0"; FrameworkName = "net20"; RunTests = $false}
-  @{Name = "GraphicsMagick.NET.net20"; Quantum = "Q16"; Platform = "Win32"; PlatformName = "x86"; Framework = "v2.0"; FrameworkName = "net20"; RunTests = $true}
-  @{Name = "GraphicsMagick.NET.net20"; Quantum = "Q16"; Platform = "x64"; PlatformName = "x64"; Framework = "v2.0"; FrameworkName = "net20"; RunTests = $false}
-  @{Name = "GraphicsMagick.NET"; Quantum = "Q8"; Platform = "Win32"; PlatformName = "x86"; Framework = "v4.0"; FrameworkName = "net40-client"; RunTests = $true}
-  @{Name = "GraphicsMagick.NET"; Quantum = "Q8"; Platform = "x64"; PlatformName = "x64"; Framework = "v4.0"; FrameworkName = "net40-client"; RunTests = $false}
-  @{Name = "GraphicsMagick.NET"; Quantum = "Q16"; Platform = "Win32"; PlatformName = "x86"; Framework = "v4.0"; FrameworkName = "net40-client"; RunTests = $true}
-  @{Name = "GraphicsMagick.NET"; Quantum = "Q16"; Platform = "x64"; PlatformName = "x64"; Framework = "v4.0"; FrameworkName = "net40-client"; RunTests = $false}
+  @{Name = "GraphicsMagick.NET"; Quantum = "Q8"; Platform = "Win32"; PlatformName = "x86"; Framework = "v4.5.2"; FrameworkName = "net452"; RunTests = $true}
+  @{Name = "GraphicsMagick.NET"; Quantum = "Q8"; Platform = "x64"; PlatformName = "x64"; Framework = "v4.5.2"; FrameworkName = "net452"; RunTests = $false}
+  @{Name = "GraphicsMagick.NET"; Quantum = "Q16"; Platform = "Win32"; PlatformName = "x86"; Framework = "v4.5.2"; FrameworkName = "net452"; RunTests = $true}
+  @{Name = "GraphicsMagick.NET"; Quantum = "Q16"; Platform = "x64"; PlatformName = "x64"; Framework = "v4.5.2"; FrameworkName = "net452"; RunTests = $false}
 )
-$anyCPUbuilds = @(
-  @{Name = "GraphicsMagick.NET.AnyCPU"; Quantum = "Q8"; Platform = "AnyCPU"; PlatformName = "AnyCPU"; Framework = "v4.0"; FrameworkName = "net40-client"; RunTests = $true}
-  @{Name = "GraphicsMagick.NET.AnyCPU"; Quantum = "Q16"; Platform = "AnyCPU"; PlatformName = "AnyCPU"; Framework = "v4.0"; FrameworkName = "net40-client"; RunTests = $true}
+$anyCPUbuilds = @( 
 )
 
 function Build($builds)
@@ -76,7 +70,7 @@ function CheckStrongNames($builds)
   {
     CheckStrongName $build.Name $build.Quantum $build.Platform $build.PlatformName
 
-    if ($build.Quantum -ne "Q16" -or $build.Framework -ne "v4.0")
+    if ($build.Quantum -ne "Q16" -or $build.Framework -ne "v4.5.2")
     {
       continue
     }
@@ -142,12 +136,12 @@ function CreateNuGetPackages($builds)
 
   foreach ($build in $builds)
   {
-    if ($build.Framework -ne "v4.0")
+    if ($build.Framework -ne "v4.5.2")
     {
       continue
     }
 
-    $id = "GraphicsMagick.NET-$($build.Quantum)-$($build.PlatformName)"
+    $id = "GraphicsMagick.NET.Internal-$($build.Quantum)-$($build.PlatformName)"
     CreateNuGetPackage $id $version $build.Name $build.Quantum $build.Platform $build.PlatformName $hasNet20
   }
 }

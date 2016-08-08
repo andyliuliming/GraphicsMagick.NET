@@ -13,3 +13,10 @@ obj
 *.opensdf
 *.sdf
 *.suo
+GraphicsMagick.NET.VC.db
+GraphicsMagick.NET.VC.VC.opendb
+GraphicsMagick.NET/GraphicsMagick.NET.vcxproj.user
+Publish/Pdb/Q8-net452.GraphicsMagick.NET-x86.pdb
+Publish/Pdb/Q16-net452.GraphicsMagick.NET-x86.pdb
+Publish/Pdb/Q16-net452.GraphicsMagick.NET-x64.pdb
+Publish/Pdb/Q8-net452.GraphicsMagick.NET-x64.pdb

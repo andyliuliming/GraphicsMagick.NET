@@ -42,8 +42,8 @@ function CreateNuGetPackage($id, $version, $folder, $quantum, $platform, $platfo
     AddFileElement $xml "..\..\GraphicsMagick.NET.net20\bin\Release$quantum\$platform\GraphicsMagick.NET-$platformName.dll" "lib\net20"
     AddFileElement $xml "..\..\GraphicsMagick.NET.net20\bin\Release$quantum\$platform\GraphicsMagick.NET-$platformName.xml" "lib\net20"
   }
-  AddFileElement $xml "..\..\$folder\bin\Release$quantum\$platform\GraphicsMagick.NET-$platformName.dll" "lib\net40-client"
-  AddFileElement $xml "..\..\$folder\bin\Release$quantum\$platform\GraphicsMagick.NET-$platformName.xml" "lib\net40-client"
+  AddFileElement $xml "..\..\$folder\bin\Release$quantum\$platform\GraphicsMagick.NET-$platformName.dll" "lib\net452"
+  AddFileElement $xml "..\..\$folder\bin\Release$quantum\$platform\GraphicsMagick.NET-$platformName.xml" "lib\net452"
 
   AddFileElement $xml ("Readme.txt") "Readme.txt"
 
